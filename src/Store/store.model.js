@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
+
 const storeSchema = mongoose.Schema(
   {
     name: {
@@ -15,7 +16,7 @@ const storeSchema = mongoose.Schema(
           "khulna",
           "barishal",
           "rangpur",
-          "mymensingh"
+          "mymensingh",
         ],
         message: "{VALUE} is not  acorrect division!",
       },
@@ -26,23 +27,22 @@ const storeSchema = mongoose.Schema(
     status: {
       type: String,
       enum: ["active", "inactive"],
-      default: "active"
+      default: "active",
     },
     manager: {
       name: String,
       contactNumber: String,
       id: {
         type: ObjectId,
-        ref: "User"
-      }
+        ref: "User",
+      },
     },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
 const Store = mongoose.model("Store", storeSchema);
 
 module.exports = Store;
-

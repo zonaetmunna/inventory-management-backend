@@ -11,12 +11,20 @@ mongoose
     useNewUrlParser: true,
   })
   .then(() => {
-    console.log(`Database connection is successful 🛢`.red.bold);
+    console.log(`Database connection is successful`.red.bold);
   });
 
 // server
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`App is running on port ${port}`.yellow.bold);
 });
+
+// mongoose connect
+/* 
+, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  }
+*/

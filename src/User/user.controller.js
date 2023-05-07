@@ -44,6 +44,7 @@ exports.createUser = async (req, res) => {
   try {
     // save or create
     const user = await createUserService(req.body);
+    console.log(user);
 
     res.status(200).json({
       status: "success",
